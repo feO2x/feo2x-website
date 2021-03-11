@@ -1,6 +1,8 @@
 @use './colors';
 @use './spacing';
 
+@import './header';
+
 html,
 body {
     padding: 0;
@@ -9,13 +11,9 @@ body {
         Helvetica Neue, sans-serif;
     background-color: colors.$backgroundColor;
     color: colors.$foregroundColor;
-
 }
 
-header {
-    height: spacing.$headerHeight;
-    background-image: linear-gradient(to right, colors.$primaryColor, colors.$primaryDarkerColor);
-}
+
 
 a {
     color: inherit;

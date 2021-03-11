@@ -1,0 +1,44 @@
+@use './colors';
+@use './spacing';
+
+header {
+    height: spacing.$headerHeight;
+    background-image: linear-gradient(to right, colors.$primaryColor, colors.$primaryDarkerColor);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: spacing.$gap;
+    margin-right: spacing.$gap;
+    width: 100%;
+    max-width: spacing.$maxContainerWidth;
+}
+
+#logo-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    & > *:not(:last-child) {
+        margin-right: spacing.$gap;
+    }
+
+    & > span {
+        font-family: Brush Script MT, cursive;
+        font-size: 24pt;
+    }
+}
+
+$logo-size: 50px;
+#logo-image {
+    width: $logo-size;
+    height: $logo-size;
+    border-radius: 50%;
+}
