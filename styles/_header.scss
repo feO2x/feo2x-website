@@ -2,21 +2,22 @@
 @use './spacing';
 
 header {
-    height: spacing.$headerHeight;
+    min-height: spacing.$headerHeight;
+    width: 100vw;
     background-image: linear-gradient(to right, colors.$primaryColor, colors.$primaryDarkerColor);
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    flex-flow: column nowrap;
     align-items: center;
 }
 
 #header-container {
+    flex-basis: spacing.$headerHeight;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    margin-left: spacing.$gap;
-    margin-right: spacing.$gap;
+    padding-left: spacing.$gap;
+    padding-right: spacing.$gap;
     width: 100%;
     max-width: spacing.$maxContainerWidth;
 }
@@ -43,12 +44,7 @@ $logo-size: spacing.$headerLogoHeight;
     border-radius: 50%;
 }
 
-#menu-container {
-
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-
+.menu-container {
     svg {
         height: spacing.$headerItemHeight;
     }
@@ -58,16 +54,56 @@ $logo-size: spacing.$headerLogoHeight;
         flex-flow: row nowrap;
         align-items: center;
 
+        &:hover {
+            text-decoration: underline;
+        }
+
         & > *:not(:last-child) {
             margin-right: spacing.$extraSmallGap;
         }
     }
+}
 
-    a:hover {
-        text-decoration: underline;
-    }
+#inline-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
 
     & > *:not(:first-child) {
         margin-left: spacing.$largeGap;
+    }
+}
+
+#expandable-menu {
+    display: flex;
+    flex-flow: column nowrap;
+
+    & > * {
+        margin-top: spacing.$smallGap;
+        margin-bottom: spacing.$smallGap;
+    }
+}
+
+#header-menu-button {
+    width: spacing.$headerButtonSize;
+    height: spacing.$headerButtonSize;
+    border: 0;
+    padding: spacing.$extraSmallGap;
+    background-color: transparent;
+    color: colors.$foregroundColor;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        background-color: colors.$primaryColor;
+    }
+
+    &:focus {
+        outline: 0;
+        background-color: colors.$primaryColor;
+    }
+
+    &:active {
+                background-color: colors.$primaryLighterColor;
     }
 }

@@ -6,7 +6,8 @@ module.exports = {
     },
     plugins: [
         '@typescript-eslint',
-        'react'
+        'react',
+        'react-hooks'
     ],
     settings: {
         react: {
@@ -16,7 +17,8 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:react/recommended'
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended'
     ],
     rules: {
         semi: [2, 'always']

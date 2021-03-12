@@ -1,16 +1,16 @@
-import React from 'react';
-import { faYoutube, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
-import { ExternalLink } from 'components/links/external-link';
-import { InternalLink } from 'components/links/internal-link';
+import { faGithub, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import { ExternalLink } from "components/links/external-link";
+import { InternalLink } from "components/links/internal-link";
+import React from "react";
 
-export function Menu(): JSX.Element {
+export function MenuLinks(): JSX.Element {
     return (
-        <div id='menu-container'>
+        <>
             <InternalLink
                 href='/about'
-                icon={faAddressCard}
                 text='About'
+                icon={faAddressCard}
             />
             <ExternalLink
                 href='https://twitter.com/feO2x'
@@ -27,6 +27,6 @@ export function Menu(): JSX.Element {
                 icon={faYoutube}
                 text='YouTube'
             />
-        </div>
+        </>
     );
 }
