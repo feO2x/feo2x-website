@@ -27,7 +27,7 @@ header {
     align-items: center;
 
     & > *:not(:last-child) {
-        margin-right: spacing.$gap;
+        margin-right: spacing.$smallGap;
     }
 
     & > span {
@@ -36,9 +36,38 @@ header {
     }
 }
 
-$logo-size: 50px;
+$logo-size: spacing.$headerLogoHeight;
 #logo-image {
     width: $logo-size;
     height: $logo-size;
     border-radius: 50%;
+}
+
+#menu-container {
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    svg {
+        height: spacing.$headerItemHeight;
+    }
+
+    a {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        & > *:not(:last-child) {
+            margin-right: spacing.$extraSmallGap;
+        }
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    & > *:not(:first-child) {
+        margin-left: spacing.$largeGap;
+    }
 }
